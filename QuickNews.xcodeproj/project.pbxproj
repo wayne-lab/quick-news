@@ -18,6 +18,10 @@
 		B0B95E48225A39FF00A40158 /* MyService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B95E45225A39FF00A40158 /* MyService.framework */; };
 		B0B95E4B225A4C1900A40158 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B95E4A225A4C1900A40158 /* News.swift */; };
 		B0B95E4D225A540000A40158 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B95E4C225A540000A40158 /* NewsService.swift */; };
+		B0B95E4F225D03A700A40158 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B95E4E225D03A700A40158 /* NewsTableViewController.swift */; };
+		B0B95E5E2262F78400A40158 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B95E5C2262F78400A40158 /* NewsTableViewCell.swift */; };
+		B0B95E5F2262F78400A40158 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B95E5D2262F78400A40158 /* NewsTableViewCell.xib */; };
+		B0B95E612262FE6700A40158 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B95E602262FE6700A40158 /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		B0B95E45225A39FF00A40158 /* MyService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyService.framework; path = Carthage/Build/iOS/MyService.framework; sourceTree = "<group>"; };
 		B0B95E4A225A4C1900A40158 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		B0B95E4C225A540000A40158 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		B0B95E4E225D03A700A40158 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		B0B95E5C2262F78400A40158 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		B0B95E5D2262F78400A40158 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		B0B95E602262FE6700A40158 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B95E612262FE6700A40158 /* SDWebImage.framework in Frameworks */,
 				B0B95E46225A39FF00A40158 /* MyUIKit.framework in Frameworks */,
 				B0B95E47225A39FF00A40158 /* Lottie.framework in Frameworks */,
 				B0B95E48225A39FF00A40158 /* MyService.framework in Frameworks */,
@@ -99,6 +108,9 @@
 			children = (
 				B0B95E1E225A353100A40158 /* AppDelegate.swift */,
 				B0B95E20225A353100A40158 /* ViewController.swift */,
+				B0B95E4E225D03A700A40158 /* NewsTableViewController.swift */,
+				B0B95E5C2262F78400A40158 /* NewsTableViewCell.swift */,
+				B0B95E5D2262F78400A40158 /* NewsTableViewCell.xib */,
 				B0B95E22225A353100A40158 /* Main.storyboard */,
 				B0B95E25225A353300A40158 /* Assets.xcassets */,
 				B0B95E27225A353300A40158 /* LaunchScreen.storyboard */,
@@ -121,6 +133,7 @@
 		B0B95E42225A39FE00A40158 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0B95E602262FE6700A40158 /* SDWebImage.framework */,
 				B0B95E44225A39FF00A40158 /* Lottie.framework */,
 				B0B95E45225A39FF00A40158 /* MyService.framework */,
 				B0B95E43225A39FF00A40158 /* MyUIKit.framework */,
@@ -213,6 +226,7 @@
 			files = (
 				B0B95E29225A353300A40158 /* LaunchScreen.storyboard in Resources */,
 				B0B95E26225A353300A40158 /* Assets.xcassets in Resources */,
+				B0B95E5F2262F78400A40158 /* NewsTableViewCell.xib in Resources */,
 				B0B95E24225A353100A40158 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +286,9 @@
 			files = (
 				B0B95E4B225A4C1900A40158 /* News.swift in Sources */,
 				B0B95E21225A353100A40158 /* ViewController.swift in Sources */,
+				B0B95E5E2262F78400A40158 /* NewsTableViewCell.swift in Sources */,
 				B0B95E4D225A540000A40158 /* NewsService.swift in Sources */,
+				B0B95E4F225D03A700A40158 /* NewsTableViewController.swift in Sources */,
 				B0B95E1F225A353100A40158 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

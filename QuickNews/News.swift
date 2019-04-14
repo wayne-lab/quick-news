@@ -37,5 +37,5 @@ struct Source {
 struct News {
     let status: NewsStatus
     let totalResult: Int
-    let articles: [Article]
+    var articles: [Article]
 }

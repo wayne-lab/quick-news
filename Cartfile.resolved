@@ -1,4 +1,4 @@
-github "SDWebImage/SDWebImage" "5.0.0"
-github "airbnb/lottie-ios" "3.0.3"
+github "SDWebImage/SDWebImage" "5.0.1"
+github "airbnb/lottie-ios" "3.0.4"
 github "wayne-lab/MyService" "2bc55668ce38cbccd246bf86ae5b4142b165fbf6"
-github "wayne-lab/MyUIKit" "afed9b97d482353d6e51091783930cbbee57bafb"
+github "wayne-lab/MyUIKit" "22bd6f22f250fc02877eb18e500bfed2ae7d5f89"
