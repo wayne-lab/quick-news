@@ -39,7 +39,6 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
     }
 
     func addFooterView() {
-        return
         let window = UIApplication.shared.keyWindow!
         let footerViewFound = window.subviews.filter {
             $0 == self.footerView
@@ -51,8 +50,10 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
         let footerView = UITextView(frame: rect)
         let attributedString = NSMutableAttributedString(string: "Powered by NewsAPI.org")
         let url = URL(string: "https://newsapi.org")!
+        #if !MonkeyTest
         attributedString.setAttributes([.link: url],
                                        range: NSRange(location: 11, length: 11))
+        #endif
         footerView.attributedText = attributedString
         footerView.isUserInteractionEnabled = true
         footerView.isEditable = false
@@ -160,17 +161,20 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
 
 extension NewsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
-        if let articles = news?.articles {
-            let article = articles[indexPath.row]
-            let urlString = article.url
-            if let url = URL(string: urlString) {
-                let config = SFSafariViewController.Configuration()
-                config.entersReaderIfAvailable = true
-                config.barCollapsingEnabled = true
-                let safari = SFSafariViewController(url: url, configuration: config)
-                present(safari, animated: true)
+        #if MonkeyTest
+            return
+        #else
+            if let articles = news?.articles {
+                let article = articles[indexPath.row]
+                let urlString = article.url
+                if let url = URL(string: urlString) {
+                    let config = SFSafariViewController.Configuration()
+                    config.entersReaderIfAvailable = true
+                    config.barCollapsingEnabled = true
+                    let safari = SFSafariViewController(url: url, configuration: config)
+                    present(safari, animated: true)
+                }
             }
-        }
+        #endif
     }
 }
