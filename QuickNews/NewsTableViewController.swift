@@ -39,6 +39,7 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
     }
 
     func addFooterView() {
+        return
         let window = UIApplication.shared.keyWindow!
         let footerViewFound = window.subviews.filter {
             $0 == self.footerView
@@ -159,6 +160,7 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
 
 extension NewsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        return
         if let articles = news?.articles {
             let article = articles[indexPath.row]
             let urlString = article.url
