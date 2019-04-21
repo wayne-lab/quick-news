@@ -1,12 +1,13 @@
 bundler_args: "--path vendor/bundle"
 before_install:
   - git fetch --depth=1000000
+  - gem install cocoapods --user-install
   # - gem install bundler
 install:
   - brew install swiftlint
   - bundle update
-  - bundle exec pod update
-  - carthage update
+  - pod update
+  - carthage update --platform ios --cache-builds --new-resolver
 after_install:
 
 os:
