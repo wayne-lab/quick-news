@@ -6,6 +6,7 @@ install:
   - brew install swiftlint
   - bundle update
   - bundle exec pod update
+  - carthage update
 after_install:
 
 os:
