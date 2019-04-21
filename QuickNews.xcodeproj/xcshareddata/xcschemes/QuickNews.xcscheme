@@ -38,26 +38,6 @@
                ReferencedContainer = "container:QuickNews.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0A05C9E226AFAC900421B3E"
-               BuildableName = "QuickNewsUITests.xctest"
-               BlueprintName = "QuickNewsUITests"
-               ReferencedContainer = "container:QuickNews.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0081CEF226B05ED00348BD1"
-               BuildableName = "QuickNewsMonkeyTests.xctest"
-               BlueprintName = "QuickNewsMonkeyTests"
-               ReferencedContainer = "container:QuickNews.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
