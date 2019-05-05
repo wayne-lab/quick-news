@@ -13,7 +13,6 @@ import SDWebImage
 import SafariServices
 
 class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTableViewControllerDelegate {
-
     var news: News?
     var currentPage: Int = 1
     var footerView: UIView?
@@ -23,19 +22,12 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "reuseIdentifier")
         refreshControlDelegate = self
         getMoreNews {
-            
         }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let rect = tableView.frame
-        tableView.frame = CGRect(x: rect.origin.x,
-                                 y: rect.origin.y,
-                                 width: rect.width,
-                                 height: rect.height-25)
         addFooterView()
-        tableView.reloadData()
     }
 
     func addFooterView() {
@@ -46,6 +38,11 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
         guard footerViewFound == nil else {
             return
         }
+        let tableViewFrame = tableView.frame
+        tableView.frame = CGRect(x: tableViewFrame.origin.x,
+                                 y: tableViewFrame.origin.y,
+                                 width: tableViewFrame.width,
+                                 height: tableViewFrame.height-25)
         let rect = CGRect(x: 0, y: view.frame.maxY, width: view.bounds.width, height: 25)
         let footerView = UITextView(frame: rect)
         let attributedString = NSMutableAttributedString(string: "Powered by NewsAPI.org")
@@ -79,7 +76,20 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+//        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+//        if cell == nil {
+//            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+//        }
+//        if let articles = news?.articles {
+//            let article = articles[indexPath.row]
+//            if let url = URL(string: article.urlToImage) {
+//                cell?.imageView?.sd_setImage(with: url, completed: nil)
+//            }
+//            cell?.textLabel?.text = article.title
+//        }
+//        return cell!
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier")
         if let newsCell = cell as? NewsTableViewCell, let articles = news?.articles {
             let article = articles[indexPath.row]
             newsCell.titleLabel.text = article.title
@@ -88,7 +98,7 @@ class NewsTableViewController: CustomRefreshTableViewController, CustomRefreshTa
             }
             return newsCell
         }
-        return cell
+        return cell!
     }
 
     open func refresh(pullDirection: MyUIKit.PullDirection,
@@ -164,17 +174,25 @@ extension NewsTableViewController {
         #if MonkeyTest
             return
         #else
-            if let articles = news?.articles {
-                let article = articles[indexPath.row]
-                let urlString = article.url
-                if let url = URL(string: urlString) {
-                    let config = SFSafariViewController.Configuration()
-                    config.entersReaderIfAvailable = true
-                    config.barCollapsingEnabled = true
-                    let safari = SFSafariViewController(url: url, configuration: config)
-                    present(safari, animated: true)
-                }
+        if let articles = news?.articles {
+            let article = articles[indexPath.row]
+            guard let detail = NewsDetailViewController.controllerWith(imageURL: article.urlToImage, content: article.content) else {
+                return
             }
+            present(detail, animated: true)
+        }
+        
+//            if let articles = news?.articles {
+//                let article = articles[indexPath.row]
+//                let urlString = article.url
+//                if let url = URL(string: urlString) {
+//                    let config = SFSafariViewController.Configuration()
+//                    config.entersReaderIfAvailable = true
+//                    config.barCollapsingEnabled = true
+//                    let safari = SFSafariViewController(url: url, configuration: config)
+//                    present(safari, animated: true)
+//                }
+//            }
         #endif
     }
 }

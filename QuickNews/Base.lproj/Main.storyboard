@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,6 +62,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fke-k2-oHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1009" y="104"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="ChM-9f-cJb">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailViewController" id="U9b-ki-lLT" customClass="NewsDetailViewController" customModule="QuickNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ak2-ZT-1Rg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FXA-Ee-dDj">
+                                <rect key="frame" x="0.0" y="20" width="320" height="217"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FXA-Ee-dDj" secondAttribute="height" multiplier="320:217" id="jho-eL-1qX"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xxh-aS-TxE">
+                                <rect key="frame" x="0.0" y="237" width="320" height="331"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FXA-Ee-dDj" firstAttribute="trailing" secondItem="B7q-au-MGl" secondAttribute="trailing" id="GCL-Dz-uLL"/>
+                            <constraint firstItem="FXA-Ee-dDj" firstAttribute="top" secondItem="B7q-au-MGl" secondAttribute="top" id="W50-Am-She"/>
+                            <constraint firstItem="FXA-Ee-dDj" firstAttribute="leading" secondItem="B7q-au-MGl" secondAttribute="leading" id="WXG-N6-cNj"/>
+                            <constraint firstItem="Xxh-aS-TxE" firstAttribute="trailing" secondItem="B7q-au-MGl" secondAttribute="trailing" id="Xqw-QX-HUv"/>
+                            <constraint firstItem="Xxh-aS-TxE" firstAttribute="leading" secondItem="B7q-au-MGl" secondAttribute="leading" id="s4x-Yj-yzj"/>
+                            <constraint firstItem="Xxh-aS-TxE" firstAttribute="bottom" secondItem="B7q-au-MGl" secondAttribute="bottom" id="uW2-P2-aZK"/>
+                            <constraint firstItem="Xxh-aS-TxE" firstAttribute="top" secondItem="FXA-Ee-dDj" secondAttribute="bottom" id="xzc-gJ-O4Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B7q-au-MGl"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="Xxh-aS-TxE" id="ziS-TV-0aa"/>
+                        <outlet property="imageView" destination="FXA-Ee-dDj" id="GJ9-lQ-IB9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6Y-oO-bcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843.125" y="114.08450704225352"/>
         </scene>
     </scenes>
 </document>

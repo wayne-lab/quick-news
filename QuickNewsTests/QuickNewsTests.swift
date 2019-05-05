@@ -23,6 +23,11 @@ class QuickNewsTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testNewsDetailConfigurations() {
+        let newsDetailConfguration = NewsDetailViewConfigurations.shared
+        XCTAssertNotNil(newsDetailConfguration.enableTapDismiss as? Bool, "enableTapDismiss should be bool type")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
